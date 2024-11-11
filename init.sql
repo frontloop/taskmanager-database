@@ -24,10 +24,13 @@ ALTER TABLE ONLY public.task ALTER COLUMN id SET DEFAULT nextval('public.task_id
 
 COPY public.task (id, name, done, created, priority) FROM stdin;
 1	Task 1	false	2024-11-11 11:29:21.99998+00	NORMAL
-2	Task 2	false	2024-11-11 11:30:21.99998+00	LOW
+2	Task 2	true	2024-11-11 11:30:21.99998+00	LOW
+3	Task 3	false	2024-11-11 11:30:21.99998+00	LOW
+4	Task 4	true	2024-11-11 11:30:21.99998+00	URGENT
+5	Task 5	false	2024-11-11 11:30:21.99998+00	NORMAL
 \.
 
-SELECT pg_catalog.setval('public.task_id_generator', 2, true);
+SELECT pg_catalog.setval('public.task_id_generator', 5, true);
 
 
 ALTER TABLE ONLY public.task
